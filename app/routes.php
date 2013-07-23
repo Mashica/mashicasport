@@ -24,7 +24,39 @@ Route::get('users', function()
 });
 */
 
+Route::get('test', function()
+{
+	$greeting0 = "colosal";
+	$greeting1 = "campy";
+	$greeting2 = "jostling";
+	$greeting3 = "jumpy";
+	$sustantivo = "synopsis";
 
+	/*
+	return View::make('tests.test1')->with(array(
+		'greeting' => $greeting,
+		'sustantivo' => $sustantivo
+		));
+	*/
+	
+	
+	$data = array(
+			'greetings' => array($greeting0, $greeting1, $greeting2, $greeting3),
+			'sustantivo' => $sustantivo,
+			'greeting' => 'calculated',
+
+		);
+
+	return View::make('tests.test1', $data);
+	
+	/*
+	$view = View::make('tests.test1');
+	$view -> greeting = $greeting;
+	$view -> sustantivo = $sustantivo;
+
+	return $view;
+	*/
+});
 
 
 Route::get('users', function()
