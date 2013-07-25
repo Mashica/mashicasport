@@ -14,10 +14,45 @@
 Route::get('/', function()
 {
 	//return View::make('hello');
-	return View::make('mashica');
+	//return View::make('mashica');
+
+	//$title = 'An inserted title with array.';
+	//$body = 'An inserted body, same.';
+
+	//$posts = DB::insert('INSERT INTO posts (title,body) VALUES(?, ?)', array($title, $body));
+	//$posts = DB::insert('INSERT INTO posts (title,body) VALUES(:title, :body)', array($title, $body));
+	//$something = DB::select('SELECT title FROM posts WHERE id = 1');
+	//dd($posts);
+	//return $something[0]->title;
+
+	/*
+	$posts = DB::table('posts')
+		->where('id','>', 3)
+		->where('body', '!=', 'an inserted body coded')
+		->orderBy('id','desc')
+		->take(2)
+		->get();
+	dd($posts);
+	*/
+
+	/*
+	$asdf = User::all();
+	
+	return View::make('tests.test1')->with(array(
+		'users'=> $asdf,
+		'greeting' => 'calculated',
+		'sustantivo' => 'friend',
+		'greetings' => array('nacent', 'findlesome', 'crudgehappenstance')));
+	*/
+
+	//$person = Usuario::whereemail1AndPass('richard@mashica.com', 'mashica2')->first();
+	
+	
+
+
 });
 
-/*
+/* 
 Route::get('users', function()
 {
     return View::make('users');
