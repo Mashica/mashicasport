@@ -7,6 +7,14 @@ Route::get('/', function()
 
 
 
+Route::get('/environment', function()
+{
+	$environment = App::environment();
+	return $environment;
+});
+
+
+
 
 Route::get('zonabici', function(){
 	

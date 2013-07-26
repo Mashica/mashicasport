@@ -28,7 +28,8 @@ $app->redirectIfTrailingSlash();
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('your-machine-name'),
+	'ms.mashica.oax' => array('ms.mashica.oax'),
+	'mashica.net' => array('mashica.net'),
 
 ));
 
