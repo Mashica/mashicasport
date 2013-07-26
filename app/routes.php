@@ -2,9 +2,60 @@
 
 Route::get('/', function()
 {
+	return View::make('mashica');
+});
+
+
+
+
+Route::get('zonabici', function(){
+	
+	$users = User::where('isactive','=',1)->orderBy('name')->get();
+	//->where('name','=','Maritza')
+	return View::make('athletelist.zonabici')->with('users', $users);
 
 
 });
+
+
+Route::get('dashboard', array('before' => 'auth', function()
+{
+    return View::make('dashboard');
+}));
+
+
+
+Route::get('/login', function()
+{
+    return View::make('login');
+});
+ 
+Route::post('/login', function()
+{
+    // Validation later - for now let’s just get the creds
+    Auth::attempt( 
+        array(
+            'email' => Input::get('email'), 
+            'password' => Input::get('password')
+        ) 
+    );
+ 
+    return Redirect::to('dashboard');
+});
+ 
+
+
+Route::get('/logout', function()
+{
+    Auth::logout();
+    
+    return View::make('logout');
+});
+
+
+
+
+
 
 
 
@@ -29,7 +80,7 @@ Route::get('test', function()
 			'greetings' => array($greeting0, $greeting1, $greeting2, $greeting3),
 			'sustantivo' => $sustantivo,
 			'greeting' => 'calculated',
-
+			'users' => array()
 		);
 
 	return View::make('tests.test1', $data);
