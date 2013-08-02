@@ -6,6 +6,19 @@ Route::get('/', function()
 });
 
 
+//Route::get('ivy','HomeController@showIvy');
+
+Route::controller('ivy','HomeController');
+
+//Route::controller();
+
+
+
+
+
+
+
+
 
 Route::get('/environment', function()
 {
